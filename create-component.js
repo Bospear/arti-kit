@@ -19,11 +19,12 @@ if (!inputName) {
   process.exit(1);
 }
 
+const componentsRoot = path.resolve("src/components");
 const componentName = inputName;
 const componentNamePascal = toPascalCase(inputName);
 
 // --- Paths ---
-const baseDir = path.resolve("src/components", componentName);
+const baseDir = path.resolve(componentsRoot, componentName);
 const storiesDir = path.join(baseDir, "stories");
 const testsDir = path.join(baseDir, "tests");
 
@@ -33,9 +34,9 @@ fs.mkdirSync(storiesDir, { recursive: true });
 fs.mkdirSync(testsDir, { recursive: true });
 
 // --- File templates ---
-const indexTs = `export * from "./${componentName}";\n`;
+const indexTs = `export * from './${componentName}';\n`;
 
-const componentTsx = `import React from "react";
+const componentTsx = `import React from 'react';
 
 export interface ${componentNamePascal}Props {
   // define your props here
@@ -47,7 +48,7 @@ export const ${componentNamePascal}: React.FC<${componentNamePascal}Props> = (pr
 `;
 
 const storyTsx = `
-import { ${componentNamePascal}, ${componentNamePascal}Props } from "../${componentName}";
+import { ${componentNamePascal}, ${componentNamePascal}Props } from '../${componentName}';
 
 export default {
   title: "Components/${componentNamePascal}",
@@ -60,8 +61,8 @@ Default.args = {
 };
 `;
 
-const testTsx = `import { render, screen } from "@testing-library/react";
-import { ${componentNamePascal} } from "../${componentName}";
+const testTsx = `import { render, screen } from '@testing-library/react';
+import { ${componentNamePascal} } from '../${componentName}';
 
 test("renders ${componentNamePascal}", () => {
   render(<${componentNamePascal} />);
@@ -74,5 +75,18 @@ fs.writeFileSync(path.join(baseDir, "index.ts"), indexTs);
 fs.writeFileSync(path.join(baseDir, `${componentName}.tsx`), componentTsx);
 fs.writeFileSync(path.join(storiesDir, `${componentName}.stories.tsx`), storyTsx);
 fs.writeFileSync(path.join(testsDir, `${componentName}.test.tsx`), testTsx);
+
+const mainIndex = path.join(componentsRoot, "index.ts");
+let exportLine = `export * from './${componentName}';\n`;
+
+// Ensure index.ts exists
+if (!fs.existsSync(mainIndex)) {
+  fs.writeFileSync(mainIndex, exportLine);
+} else {
+  const content = fs.readFileSync(mainIndex, "utf8");
+  if (!content.includes(exportLine)) {
+    fs.appendFileSync(mainIndex, exportLine);
+  }
+}
 
 console.log(`✅ Component "${componentName}" created successfully at ${baseDir}`);
