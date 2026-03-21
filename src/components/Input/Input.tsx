@@ -1,10 +1,18 @@
 import type { InputHTMLAttributes, SelectHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import './Input.css';
 
+/** One row in a native `<datalist>` (browser autocomplete dropdown). */
+export type InputSuggestion = string | { value: string; label?: string };
+
 export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'id'> & {
   label?: string;
   id: string;
   error?: string;
+  /**
+   * Renders a `<datalist>` and sets `list` on the input. Users can pick a suggestion or type freely.
+   * For password managers / browser heuristics, also set `autoComplete` (e.g. `"email"`, `"name"`).
+   */
+  suggestions?: InputSuggestion[];
 };
 
 export function Input({
@@ -15,8 +23,14 @@ export function Input({
   error,
   disabled = false,
   className = '',
+  suggestions,
+  list,
   ...props
 }: InputProps) {
+  const hasDatalist = Boolean(suggestions && suggestions.length > 0);
+  const datalistId = hasDatalist ? `${id}-datalist` : undefined;
+  const listAttr = hasDatalist ? datalistId : list;
+
   return (
     <div className={`art-input-group ${error ? 'art-input-group--error' : ''} ${className}`.trim()}>
       {label && (
@@ -32,8 +46,23 @@ export function Input({
         disabled={disabled}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
+        aria-autocomplete={hasDatalist ? 'list' : undefined}
         {...props}
+        list={listAttr}
       />
+      {hasDatalist && (
+        <datalist id={datalistId}>
+          {suggestions!.map((item, index) =>
+            typeof item === 'string' ? (
+              <option key={`${item}-${index}`} value={item} />
+            ) : (
+              <option key={`${item.value}-${index}`} value={item.value}>
+                {item.label ?? item.value}
+              </option>
+            )
+          )}
+        </datalist>
+      )}
       {error && (
         <span id={`${id}-error`} className="art-input-group__error" role="alert">
           {error}

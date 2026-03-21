@@ -11,7 +11,13 @@ export type { CardProps, CardVariant, CardSectionProps } from './components/Card
 export { Banner } from './components/Banner/Banner';
 export type { BannerProps, BannerVariant, BannerSize } from './components/Banner/Banner';
 export { Input, Textarea, Select } from './components/Input/Input';
-export type { InputProps, TextareaProps, SelectProps, SelectOption } from './components/Input/Input';
+export type {
+  InputProps,
+  InputSuggestion,
+  TextareaProps,
+  SelectProps,
+  SelectOption,
+} from './components/Input/Input';
 export { Checkbox } from './components/Checkbox/Checkbox';
 export type { CheckboxProps, CheckState } from './components/Checkbox/Checkbox';
 export { Switch } from './components/Switch/Switch';
