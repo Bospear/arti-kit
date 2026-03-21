@@ -1,0 +1,23 @@
+.art-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  border: 2px solid;
+  white-space: nowrap;
+}
+
+.art-badge--sm { padding: 2px var(--space-2); font-size: 0.65rem; }
+.art-badge--md { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); }
+.art-badge--lg { padding: var(--space-1) var(--space-4); font-size: var(--text-sm); }
+
+.art-badge--default { background-color: var(--color-parchment-200); color: var(--color-text-secondary); border-color: var(--color-parchment-400); }
+.art-badge--crimson { background-color: var(--color-crimson-50); color: var(--color-crimson-400); border-color: var(--color-crimson-200); }
+.art-badge--azure { background-color: var(--color-azure-50); color: var(--color-azure-400); border-color: var(--color-azure-200); }
+.art-badge--bark { background-color: var(--color-bark-50); color: var(--color-bark-400); border-color: var(--color-bark-200); }
+.art-badge--steel { background-color: var(--color-steel-50); color: var(--color-steel-500); border-color: var(--color-steel-200); }
+.art-badge--solid-crimson { background-color: var(--color-crimson-300); color: var(--color-parchment-50); border-color: var(--color-crimson-500); }
+.art-badge--solid-azure { background-color: var(--color-azure-300); color: var(--color-parchment-50); border-color: var(--color-azure-500); }

@@ -1,0 +1,140 @@
+:root {
+  /* ═══════════════════════════════════════════
+     ARTIFICER TOOLS — Design Tokens
+     Medieval / Fantasy / Craftsman aesthetic
+     ═══════════════════════════════════════════ */
+
+  /* ── Core Palette ── */
+  --color-parchment-50: #f5f0e8;
+  --color-parchment-100: #ece4d4;
+  --color-parchment-200: #ddd2b8;
+  --color-parchment-300: #c9b998;
+  --color-parchment-400: #b5a488;
+  --color-parchment-500: #a89279;
+
+  --color-crimson-50: #fbe8e8;
+  --color-crimson-100: #f0bfbf;
+  --color-crimson-200: #d94f4f;
+  --color-crimson-300: #c0392b;
+  --color-crimson-400: #a0261e;
+  --color-crimson-500: #7b1a12;
+
+  --color-steel-50: #f0f1f2;
+  --color-steel-100: #d5d8dc;
+  --color-steel-200: #b0b6be;
+  --color-steel-300: #8a929c;
+  --color-steel-400: #6b7280;
+  --color-steel-500: #4a5058;
+
+  --color-azure-50: #e6f2fa;
+  --color-azure-100: #b3d7f0;
+  --color-azure-200: #5ba0d0;
+  --color-azure-300: #3485b8;
+  --color-azure-400: #1f6a9c;
+  --color-azure-500: #0f4f7a;
+
+  --color-bark-50: #f2ebe4;
+  --color-bark-100: #d4bfa8;
+  --color-bark-200: #a67c52;
+  --color-bark-300: #7a5630;
+  --color-bark-400: #5c3d1e;
+  --color-bark-500: #3a2510;
+
+  --color-ink-900: #1a1a1a;
+  --color-ink-800: #2c2c2c;
+  --color-ink-700: #3d3d3d;
+
+  --color-white: #faf8f4;
+
+  /* ── Semantic Colors ── */
+  --color-bg: var(--color-parchment-100);
+  --color-surface: var(--color-parchment-50);
+  --color-surface-raised: var(--color-white);
+  --color-text-primary: var(--color-ink-900);
+  --color-text-secondary: var(--color-bark-300);
+  --color-text-muted: var(--color-steel-400);
+  --color-text-inverse: var(--color-parchment-50);
+
+  --color-primary: var(--color-crimson-300);
+  --color-primary-hover: var(--color-crimson-400);
+  --color-primary-light: var(--color-crimson-50);
+
+  --color-secondary: var(--color-azure-300);
+  --color-secondary-hover: var(--color-azure-400);
+  --color-secondary-light: var(--color-azure-50);
+
+  --color-accent: var(--color-bark-200);
+  --color-accent-hover: var(--color-bark-300);
+
+  --color-border: var(--color-parchment-300);
+  --color-border-strong: var(--color-bark-200);
+  --color-outline: var(--color-ink-900);
+
+  /* ── Typography ── */
+  --font-display: 'Cinzel', 'Palatino Linotype', 'Georgia', serif;
+  --font-body: 'Crimson Text', 'Palatino', 'Book Antiqua', serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ── Border & Radius ── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --border-thin: 1px solid var(--color-border);
+  --border-medium: 2px solid var(--color-border-strong);
+  --border-heavy: 3px solid var(--color-outline);
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(26, 26, 26, 0.12);
+  --shadow-md: 0 4px 12px rgba(26, 26, 26, 0.15);
+  --shadow-lg: 0 8px 24px rgba(26, 26, 26, 0.18);
+  --shadow-inner: inset 0 2px 6px rgba(26, 26, 26, 0.1);
+  --shadow-emboss: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                   0 2px 4px rgba(26, 26, 26, 0.2);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ── Component sizing ── */
+  /* Large quest-title ribbon (Banner size="lg"); 37.5rem ≈ 600px at 16px root */
+  --banner-width-lg: 37.5rem;
+}

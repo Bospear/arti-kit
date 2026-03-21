@@ -1,0 +1,67 @@
+.art-banner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  text-align: center;
+  /* Royal ribbon / swallowtail ends (matches logo): one V-notch per side → two points per fly */
+  clip-path: polygon(
+    10% 0%,
+    90% 0%,
+    100% 10%,
+    92% 50%,
+    100% 90%,
+    90% 100%,
+    10% 100%,
+    0% 90%,
+    8% 50%,
+    0% 10%
+  );
+  overflow: visible;
+}
+
+.art-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 40%, rgba(0,0,0,0.15) 100%);
+  pointer-events: none;
+}
+
+.art-banner__text { position: relative; z-index: 1; }
+
+.art-banner--sm { padding: var(--space-1) var(--space-6); font-size: var(--text-xs); }
+.art-banner--md { padding: var(--space-2) var(--space-8); font-size: var(--text-sm); }
+.art-banner--lg {
+  padding: var(--space-3) var(--space-12);
+  font-size: var(--text-lg);
+  width: var(--banner-width-lg);
+}
+
+.art-banner--crimson {
+  background-color: var(--color-crimson-300);
+  color: var(--color-parchment-50);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.art-banner--azure {
+  background-color: var(--color-azure-300);
+  color: var(--color-parchment-50);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.art-banner--parchment {
+  background-color: var(--color-parchment-200);
+  color: var(--color-ink-900);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.art-banner--dark {
+  background-color: var(--color-ink-800);
+  color: var(--color-parchment-100);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,22 @@
+.art-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.art-logo--sm {
+  width: 120px;
+}
+
+.art-logo--md {
+  width: 200px;
+}
+
+.art-logo--lg {
+  width: 280px;
+}
+
+.art-logo--xl {
+  width: 360px;
+}

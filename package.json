@@ -1,0 +1,73 @@
+{
+  "name": "arti-kit",
+  "version": "0.1.0",
+  "description": "Artificer design system — React 19 component library (Artikit)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bospear/arti-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bospear/arti-kit/issues"
+  },
+  "homepage": "https://github.com/Bospear/arti-kit#readme",
+  "type": "module",
+  "main": "./dist/artikit.js",
+  "module": "./dist/artikit.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/artikit.js"
+    },
+    "./styles.css": "./dist/artikit.css",
+    "./logo.png": "./dist/logo.png"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "vite build && node scripts/copy-logo.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint": "tsc --noEmit -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "@storybook/test": "^8.6.14",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^26.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "storybook": "^8.6.14",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.0.5"
+  },
+  "keywords": [
+    "react",
+    "design-system",
+    "components",
+    "artikit",
+    "arti-kit"
+  ],
+  "license": "MIT"
+}
