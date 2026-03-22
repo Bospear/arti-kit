@@ -55,7 +55,7 @@ The package entry applies **design tokens** (`tokens.css`). For fonts, load Cinz
 
 ## Components
 
-Button, Card (+ header/body/footer), Banner, Input, Textarea, Select, Checkbox (binary + triple), Switch, Badge, Divider, Accordion (compound API), **Logo** (Artificer mark).
+Button, Card (+ header/body/footer), Banner, Input, Textarea, Select, Checkbox (binary + triple), Switch, Badge, Divider, Accordion (compound API), **DataTable** (filter + sort + optional `pageSize` pagination), **Pagination** (numeric strip with first/last page + ellipses, `neighborCount` for pages around current), **FabSpeedDial** (floating action + speed-dial), **Tooltip**, **Alert** (message / error / success / warning), **Snackbar** (bottom toast + optional action), **Dialog** (modal + `DialogActions`), **Logo** (Artificer mark).
 
 ### Logo
 

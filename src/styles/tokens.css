@@ -137,4 +137,8 @@
   /* ── Component sizing ── */
   /* Large quest-title ribbon (Banner size="lg"); 37.5rem ≈ 600px at 16px root */
   --banner-width-lg: 37.5rem;
+
+  /* ── Z-index stack ── */
+  --z-snackbar: 150;
+  --z-modal: 200;
 }

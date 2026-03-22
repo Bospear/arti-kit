@@ -40,3 +40,33 @@ export type {
 } from './components/Accordion/Accordion';
 export { Logo, LOGO_SRC } from './components/Logo/Logo';
 export type { LogoProps, LogoSize } from './components/Logo/Logo';
+export { DataTable } from './components/DataTable/DataTable';
+export type {
+  DataTableProps,
+  DataTableColumn,
+  DataTableSortType,
+} from './components/DataTable/DataTable';
+export { Pagination } from './components/Pagination/Pagination';
+export type { PaginationProps } from './components/Pagination/Pagination';
+export { FabSpeedDial, FAB_DEMO_ACTIONS } from './components/Fab/Fab';
+export type {
+  FabSpeedDialProps,
+  FabSpeedDialAction,
+  FabActionIcon,
+} from './components/Fab/Fab';
+export { Tooltip } from './components/Tooltip/Tooltip';
+export type {
+  TooltipProps,
+  TooltipVariant,
+  TooltipPlacement,
+} from './components/Tooltip/Tooltip';
+export { Alert } from './components/Alert/Alert';
+export type { AlertProps, AlertVariant } from './components/Alert/Alert';
+export { Dialog, DialogActions } from './components/Dialog/Dialog';
+export type { DialogProps, DialogActionsProps } from './components/Dialog/Dialog';
+export { Snackbar } from './components/Snackbar/Snackbar';
+export type {
+  SnackbarProps,
+  SnackbarVariant,
+  SnackbarPosition,
+} from './components/Snackbar/Snackbar';

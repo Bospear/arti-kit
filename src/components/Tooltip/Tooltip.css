@@ -1,0 +1,160 @@
+/* ── Wrapper ── */
+.art-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.art-tooltip__fallback-trigger {
+  cursor: default;
+  outline: none;
+}
+
+.art-tooltip__fallback-trigger:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Bubble ── */
+.art-tooltip {
+  position: absolute;
+  left: 50%;
+  z-index: 200;
+  min-width: 2.5rem;
+  max-width: min(18rem, 90vw);
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+  filter: drop-shadow(0 4px 10px rgba(26, 26, 26, 0.12));
+}
+
+.art-tooltip--placement-top {
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(0.35rem);
+}
+
+.art-tooltip--placement-top.art-tooltip--visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.art-tooltip--placement-bottom {
+  top: calc(100% + 10px);
+  transform: translateX(-50%) translateY(-0.35rem);
+}
+
+.art-tooltip--placement-bottom.art-tooltip--visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.art-tooltip--visible {
+  opacity: 1;
+}
+
+.art-tooltip__inner {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  text-align: center;
+  border-radius: var(--radius-sm);
+  border-width: 2px;
+  border-style: solid;
+  position: relative;
+}
+
+/* Arrow */
+.art-tooltip__inner::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.art-tooltip--placement-top .art-tooltip__inner::after {
+  bottom: -8px;
+  border-top-width: 8px;
+  border-top-style: solid;
+  border-bottom: none;
+}
+
+.art-tooltip--placement-bottom .art-tooltip__inner::after {
+  top: -8px;
+  border-bottom-width: 8px;
+  border-bottom-style: solid;
+  border-top: none;
+}
+
+/* ── Variant: message (neutral) ── */
+.art-tooltip--message .art-tooltip__inner {
+  background: var(--color-surface-raised);
+  color: var(--color-text-primary);
+  border-color: var(--color-bark-200);
+}
+
+.art-tooltip--message.art-tooltip--placement-top .art-tooltip__inner::after {
+  border-top-color: var(--color-bark-200);
+}
+
+.art-tooltip--message.art-tooltip--placement-bottom .art-tooltip__inner::after {
+  border-bottom-color: var(--color-bark-200);
+}
+
+/* ── Variant: error ── */
+.art-tooltip--error .art-tooltip__inner {
+  background: var(--color-crimson-50);
+  color: var(--color-crimson-500);
+  border-color: var(--color-crimson-300);
+  font-weight: var(--weight-semibold);
+}
+
+.art-tooltip--error.art-tooltip--placement-top .art-tooltip__inner::after {
+  border-top-color: var(--color-crimson-300);
+}
+
+.art-tooltip--error.art-tooltip--placement-bottom .art-tooltip__inner::after {
+  border-bottom-color: var(--color-crimson-300);
+}
+
+/* ── Variant: success ── */
+.art-tooltip--success .art-tooltip__inner {
+  background: var(--color-azure-50);
+  color: var(--color-azure-500);
+  border-color: var(--color-azure-300);
+  font-weight: var(--weight-semibold);
+}
+
+.art-tooltip--success.art-tooltip--placement-top .art-tooltip__inner::after {
+  border-top-color: var(--color-azure-300);
+}
+
+.art-tooltip--success.art-tooltip--placement-bottom .art-tooltip__inner::after {
+  border-bottom-color: var(--color-azure-300);
+}
+
+/* ── Variant: warning ── */
+.art-tooltip--warning .art-tooltip__inner {
+  background: var(--color-bark-50);
+  color: var(--color-bark-500);
+  border-color: var(--color-bark-200);
+  font-weight: var(--weight-semibold);
+}
+
+.art-tooltip--warning.art-tooltip--placement-top .art-tooltip__inner::after {
+  border-top-color: var(--color-bark-200);
+}
+
+.art-tooltip--warning.art-tooltip--placement-bottom .art-tooltip__inner::after {
+  border-bottom-color: var(--color-bark-200);
+}
