@@ -1,40 +1,29 @@
+/* Calligraphic quill flourish — single flowing ink stroke */
 .art-divider {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   margin: var(--space-6) 0;
+  color: var(--divider-ink, var(--color-bark-400));
 }
 
-.art-divider::before,
-.art-divider::after {
-  content: '';
+.art-divider__flourish {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0.4px 0 color-mix(in srgb, currentColor 18%, transparent));
+}
+
+.art-divider__rule {
   flex: 1;
-  height: 2px;
+  height: 1.5px;
+  min-width: var(--space-6);
+  border-radius: 1px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0.55;
 }
-
-.art-divider--default::before,
-.art-divider--default::after {
-  background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
-}
-
-.art-divider--crimson::before,
-.art-divider--crimson::after {
-  background: linear-gradient(90deg, transparent, var(--color-crimson-200), transparent);
-}
-
-.art-divider--azure::before,
-.art-divider--azure::after {
-  background: linear-gradient(90deg, transparent, var(--color-azure-200), transparent);
-}
-
-.art-divider--ornate::before,
-.art-divider--ornate::after {
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-bark-200) 20%, var(--color-crimson-300) 50%, var(--color-bark-200) 80%, transparent);
-}
-
-.art-divider--labeled::before { margin-right: var(--space-4); }
-.art-divider--labeled::after { margin-left: var(--space-4); }
 
 .art-divider__label {
   font-family: var(--font-display);
@@ -44,4 +33,11 @@
   text-transform: uppercase;
   color: var(--color-text-muted);
   white-space: nowrap;
+  padding: 0 var(--space-4);
+  text-shadow: 0 1px 0 rgba(255, 250, 240, 0.35);
 }
+
+.art-divider--default { --divider-ink: var(--color-bark-400); }
+.art-divider--crimson { --divider-ink: var(--color-crimson-500); }
+.art-divider--azure   { --divider-ink: var(--color-azure-500); }
+.art-divider--ornate  { --divider-ink: var(--color-bark-300); }

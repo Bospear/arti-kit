@@ -1,3 +1,4 @@
+/* Swallowtail ribbon — styled to echo the heraldic banners in the Artificer logo */
 .art-banner {
   position: relative;
   display: inline-flex;
@@ -8,7 +9,8 @@
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
   text-align: center;
-  /* Royal ribbon / swallowtail ends (matches logo): one V-notch per side → two points per fly */
+  isolation: isolate;
+  /* Royal ribbon / swallowtail: one V-notch per side (two points per fly), as in the mark */
   clip-path: polygon(
     10% 0%,
     90% 0%,
@@ -24,44 +26,157 @@
   overflow: visible;
 }
 
+/* Faceted sheen + folded-cloth read */
 .art-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 40%, rgba(0,0,0,0.15) 100%);
+  z-index: 0;
   pointer-events: none;
+  background:
+    linear-gradient(
+      118deg,
+      rgba(255, 252, 240, 0.28) 0%,
+      transparent 38%,
+      transparent 58%,
+      rgba(0, 0, 0, 0.14) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      transparent 36%,
+      transparent 64%,
+      rgba(0, 0, 0, 0.16) 100%
+    ),
+    radial-gradient(ellipse 100% 45% at 50% -10%, rgba(255, 255, 255, 0.22) 0%, transparent 62%),
+    repeating-linear-gradient(
+      92deg,
+      transparent,
+      transparent 5px,
+      rgba(0, 0, 0, 0.028) 5px,
+      rgba(0, 0, 0, 0.028) 6px
+    );
 }
 
-.art-banner__text { position: relative; z-index: 1; }
+/* Inner “stitched” edge read (subtle top/bottom glints) */
+.art-banner::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 12%;
+  bottom: 12%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 2px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  opacity: 0.85;
+}
 
-.art-banner--sm { padding: var(--space-1) var(--space-6); font-size: var(--text-xs); }
-.art-banner--md { padding: var(--space-2) var(--space-8); font-size: var(--text-sm); }
+.art-banner__text {
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--space-1);
+}
+
+.art-banner--sm {
+  padding: var(--space-1) var(--space-6);
+  font-size: var(--text-xs);
+}
+
+.art-banner--md {
+  padding: var(--space-2) var(--space-8);
+  font-size: var(--text-sm);
+}
+
 .art-banner--lg {
   padding: var(--space-3) var(--space-12);
   font-size: var(--text-lg);
   width: var(--banner-width-lg);
 }
 
+/* Variants: base fill + woven highlight + shape-following rim (brass / silver / leather) */
 .art-banner--crimson {
   background-color: var(--color-crimson-300);
   color: var(--color-parchment-50);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.45),
+    0 2px 4px rgba(0, 0, 0, 0.35),
+    0 0 1px rgba(255, 248, 220, 0.35);
+  background-image:
+    linear-gradient(180deg, rgba(255, 130, 120, 0.2) 0%, transparent 40%),
+    linear-gradient(180deg, transparent 45%, rgba(80, 10, 10, 0.22) 100%),
+    repeating-linear-gradient(
+      88deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.04) 4px,
+      rgba(0, 0, 0, 0.04) 5px
+    );
+  filter: drop-shadow(0 2px 0 rgba(62, 12, 8, 0.5)) drop-shadow(0 5px 14px rgba(26, 26, 26, 0.35))
+    drop-shadow(0 0 0 1.5px rgba(201, 162, 39, 0.75)) drop-shadow(0 0 2px rgba(255, 236, 180, 0.45));
 }
 
 .art-banner--azure {
   background-color: var(--color-azure-300);
   color: var(--color-parchment-50);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 1px rgba(220, 240, 255, 0.4);
+  background-image:
+    linear-gradient(180deg, rgba(150, 210, 255, 0.25) 0%, transparent 42%),
+    linear-gradient(180deg, transparent 50%, rgba(8, 40, 70, 0.2) 100%),
+    repeating-linear-gradient(
+      88deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.035) 4px,
+      rgba(0, 0, 0, 0.035) 5px
+    );
+  filter: drop-shadow(0 2px 0 rgba(12, 45, 80, 0.45)) drop-shadow(0 5px 14px rgba(26, 26, 26, 0.32))
+    drop-shadow(0 0 0 1.5px rgba(220, 230, 245, 0.65)) drop-shadow(0 0 2px rgba(180, 215, 255, 0.35));
 }
 
 .art-banner--parchment {
   background-color: var(--color-parchment-200);
   color: var(--color-ink-900);
-  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55),
+    0 -1px 0 rgba(92, 61, 30, 0.08);
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 38%),
+    linear-gradient(180deg, transparent 55%, rgba(139, 115, 90, 0.18) 100%),
+    repeating-linear-gradient(
+      88deg,
+      transparent,
+      transparent 4px,
+      rgba(139, 115, 90, 0.06) 4px,
+      rgba(139, 115, 90, 0.06) 5px
+    );
+  filter: drop-shadow(0 2px 0 rgba(122, 86, 48, 0.25)) drop-shadow(0 5px 12px rgba(26, 26, 26, 0.18))
+    drop-shadow(0 0 0 1.5px rgba(92, 61, 30, 0.45)) drop-shadow(0 0 2px rgba(255, 252, 245, 0.6));
 }
 
 .art-banner--dark {
   background-color: var(--color-ink-800);
   color: var(--color-parchment-100);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 0 1px rgba(201, 162, 39, 0.2);
+  background-image:
+    linear-gradient(180deg, rgba(80, 80, 80, 0.35) 0%, transparent 45%),
+    linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.35) 100%),
+    repeating-linear-gradient(
+      88deg,
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.03) 4px,
+      rgba(255, 255, 255, 0.03) 5px
+    );
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.55)) drop-shadow(0 5px 16px rgba(26, 26, 26, 0.45))
+    drop-shadow(0 0 0 1.5px rgba(201, 162, 39, 0.55)) drop-shadow(0 0 3px rgba(201, 162, 39, 0.15));
 }
