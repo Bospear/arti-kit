@@ -12,17 +12,19 @@ function DividerFlourish() {
   return (
     <svg
       className="art-divider__flourish"
-      viewBox="0 0 400 56"
+      viewBox="0 0 400 16"
       aria-hidden
       focusable="false"
+      preserveAspectRatio="none"
     >
-      <path
-        d="M 14,15 C 7,19 10,27 22,26 C 32,25 42,34 40,43 C 38,50 26,49 25,41 C 24,33 34,23 56,25 C 105,28 160,27 200,27 C 240,27 295,28 344,25 C 366,23 376,33 375,41 C 374,49 362,50 360,43 C 358,34 368,25 378,26 C 390,27 393,19 386,15"
-        fill="none"
+      <line
+        x1="0"
+        y1="8"
+        x2="400"
+        y2="8"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </svg>
   );

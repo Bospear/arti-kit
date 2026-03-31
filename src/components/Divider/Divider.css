@@ -10,10 +10,9 @@
 
 .art-divider__flourish {
   width: 100%;
-  max-width: 520px;
-  height: auto;
+  height: 1.5px;
   display: block;
-  filter: drop-shadow(0 0.4px 0 color-mix(in srgb, currentColor 18%, transparent));
+  opacity: 0.55;
 }
 
 .art-divider__rule {
