@@ -16,7 +16,9 @@ jobs:
         run: docker build -t artikit:latest .
 
       - name: Save Docker image to tar
-        run: docker save artikit:latest -o artikit.tar
+        run: |
+          docker save artikit:latest -o /tmp/artikit.tar
+          chmod 644 /tmp/artikit.tar
 
       - name: Copy image to server
         uses: appleboy/scp-action@v0.1.7
@@ -24,8 +26,9 @@ jobs:
           host: bospear.com
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          source: artikit.tar
+          source: /tmp/artikit.tar
           target: /tmp
+          strip_components: 1
 
       - name: Deploy on server
         uses: appleboy/ssh-action@v1.2.0
