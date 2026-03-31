@@ -16,19 +16,18 @@ jobs:
         run: docker build -t artikit:latest .
 
       - name: Save Docker image to tar
-        run: |
-          docker save artikit:latest -o /tmp/artikit.tar
-          chmod 644 /tmp/artikit.tar
+        run: docker save artikit:latest | gzip > artikit.tar.gz
 
       - name: Copy image to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: bospear.com
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          source: /tmp/artikit.tar
-          target: /tmp
-          strip_components: 1
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
+          sshpass -p "$SERVER_PASSWORD" \
+            scp -o StrictHostKeyChecking=no \
+            artikit.tar.gz \
+            "${SERVER_USERNAME}@bospear.com:/tmp/artikit.tar.gz"
+        env:
+          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
 
       - name: Deploy on server
         uses: appleboy/ssh-action@v1.2.0
@@ -37,8 +36,8 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            docker load -i /tmp/artikit.tar
-            rm /tmp/artikit.tar
+            docker load -i /tmp/artikit.tar.gz
+            rm /tmp/artikit.tar.gz
             docker stop artikit 2>/dev/null || true
             docker rm artikit 2>/dev/null || true
             docker run -d \
