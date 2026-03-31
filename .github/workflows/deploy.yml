@@ -1,0 +1,46 @@
+name: Build & Deploy Artikit
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t artikit:latest .
+
+      - name: Save Docker image to tar
+        run: docker save artikit:latest -o artikit.tar
+
+      - name: Copy image to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: bospear.com
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          source: artikit.tar
+          target: /tmp
+
+      - name: Deploy on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: bospear.com
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            docker load -i /tmp/artikit.tar
+            rm /tmp/artikit.tar
+            docker stop artikit 2>/dev/null || true
+            docker rm artikit 2>/dev/null || true
+            docker run -d \
+              --name artikit \
+              --restart unless-stopped \
+              -p 80:80 \
+              artikit:latest
+            docker image prune -f
