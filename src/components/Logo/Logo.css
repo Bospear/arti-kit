@@ -21,8 +21,12 @@
   width: 360px;
 }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-logo--lg { width: 200px; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-logo--xl { width: 260px; }
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-logo--lg { width: 200px; }
-  .art-logo--xl { width: 260px; }
+  :root:not(.art-bp-ready) .art-logo--lg { width: 200px; }
+  :root:not(.art-bp-ready) .art-logo--xl { width: 260px; }
 }

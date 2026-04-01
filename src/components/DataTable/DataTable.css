@@ -229,36 +229,22 @@
   color: var(--color-text-muted);
 }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table__toolbar { flex-direction: column; align-items: stretch; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table__filter { max-width: 100%; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table__count { text-align: center; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table { font-size: var(--text-xs); }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table__th { padding: var(--space-2) var(--space-2); font-size: 0.65rem; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table__td { padding: var(--space-2) var(--space-2); }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-data-table__sort-btn { padding: var(--space-2) var(--space-2); font-size: 0.65rem; }
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-data-table__toolbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .art-data-table__filter {
-    max-width: 100%;
-  }
-
-  .art-data-table__count {
-    text-align: center;
-  }
-
-  .art-data-table {
-    font-size: var(--text-xs);
-  }
-
-  .art-data-table__th {
-    padding: var(--space-2) var(--space-2);
-    font-size: 0.65rem;
-  }
-
-  .art-data-table__td {
-    padding: var(--space-2) var(--space-2);
-  }
-
-  .art-data-table__sort-btn {
-    padding: var(--space-2) var(--space-2);
-    font-size: 0.65rem;
-  }
+  :root:not(.art-bp-ready) .art-data-table__toolbar { flex-direction: column; align-items: stretch; }
+  :root:not(.art-bp-ready) .art-data-table__filter { max-width: 100%; }
+  :root:not(.art-bp-ready) .art-data-table__count { text-align: center; }
+  :root:not(.art-bp-ready) .art-data-table { font-size: var(--text-xs); }
+  :root:not(.art-bp-ready) .art-data-table__th { padding: var(--space-2) var(--space-2); font-size: 0.65rem; }
+  :root:not(.art-bp-ready) .art-data-table__td { padding: var(--space-2) var(--space-2); }
+  :root:not(.art-bp-ready) .art-data-table__sort-btn { padding: var(--space-2) var(--space-2); font-size: 0.65rem; }
 }

@@ -168,22 +168,16 @@
   color: var(--color-text-muted);
 }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-checkbox { gap: var(--space-2); font-size: var(--text-sm); }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-checkbox__face,
+:root.art-bp-ready:not(.art-bp-up-sm) .art-checkbox__native { width: 1.5rem; height: 1.5rem; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-checkbox__face--triple { width: 1.625rem; min-width: 1.625rem; height: 1.5rem; }
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-checkbox {
-    gap: var(--space-2);
-    font-size: var(--text-sm);
-  }
-
-  .art-checkbox__face,
-  .art-checkbox__native {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .art-checkbox__face--triple {
-    width: 1.625rem;
-    min-width: 1.625rem;
-    height: 1.5rem;
-  }
+  :root:not(.art-bp-ready) .art-checkbox { gap: var(--space-2); font-size: var(--text-sm); }
+  :root:not(.art-bp-ready) .art-checkbox__face,
+  :root:not(.art-bp-ready) .art-checkbox__native { width: 1.5rem; height: 1.5rem; }
+  :root:not(.art-bp-ready) .art-checkbox__face--triple { width: 1.625rem; min-width: 1.625rem; height: 1.5rem; }
 }

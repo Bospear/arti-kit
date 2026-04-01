@@ -1,8 +1,15 @@
 import type { Preview } from '@storybook/react';
+import React from 'react';
+import { BreakpointProvider } from '../src/hooks/BreakpointProvider';
 import '../src/styles/fonts.css';
 import '../src/styles/tokens.css';
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      React.createElement(BreakpointProvider, null, React.createElement(Story))
+    ),
+  ],
   parameters: {
     layout: 'padded',
     backgrounds: {
