@@ -124,3 +124,16 @@
   align-items: center;
   font-size: 1.15em;
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-btn--lg {
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--text-sm);
+  }
+
+  .art-btn--md {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+}

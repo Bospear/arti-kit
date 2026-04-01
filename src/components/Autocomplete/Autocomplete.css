@@ -92,3 +92,15 @@
   font-style: italic;
   text-align: center;
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-autocomplete__menu {
+    max-height: 200px;
+  }
+
+  .art-autocomplete__option {
+    padding: var(--space-3) var(--space-3);
+    font-size: 1rem;
+  }
+}

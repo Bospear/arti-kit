@@ -180,3 +180,22 @@
   filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.55)) drop-shadow(0 5px 16px rgba(26, 26, 26, 0.45))
     drop-shadow(0 0 0 1.5px rgba(201, 162, 39, 0.55)) drop-shadow(0 0 3px rgba(201, 162, 39, 0.15));
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-banner--sm {
+    padding: var(--space-1) var(--space-4);
+    font-size: 0.65rem;
+  }
+
+  .art-banner--md {
+    padding: var(--space-2) var(--space-6);
+    font-size: var(--text-xs);
+  }
+
+  .art-banner--lg {
+    padding: var(--space-2) var(--space-8);
+    font-size: var(--text-sm);
+    width: min(var(--banner-width-lg), 100%);
+  }
+}

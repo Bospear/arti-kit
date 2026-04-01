@@ -141,3 +141,20 @@
 .art-alert--warning .art-alert__title {
   color: var(--color-bark-500);
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-alert {
+    padding: var(--space-3) var(--space-3);
+    gap: var(--space-2);
+    max-width: 100%;
+  }
+
+  .art-alert__title {
+    font-size: var(--text-xs);
+  }
+
+  .art-alert__body {
+    font-size: var(--text-sm);
+  }
+}
