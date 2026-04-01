@@ -152,7 +152,7 @@ export function Autocomplete({
         </label>
       )}
 
-      <div className="art-autocomplete">
+      <div className={`art-autocomplete ${open ? 'art-autocomplete--open' : ''}`}>
         <div className="art-select-wrapper">
           <input
             ref={inputRef}
