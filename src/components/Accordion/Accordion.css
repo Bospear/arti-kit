@@ -111,3 +111,21 @@
   border-top-color: var(--color-border);
   padding-top: var(--space-3);
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-accordion__trigger {
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--text-xs);
+    gap: var(--space-2);
+  }
+
+  .art-accordion__panel-inner {
+    padding: 0 var(--space-3) var(--space-3);
+    font-size: var(--text-sm);
+  }
+
+  .art-accordion__panel[data-state='open'] .art-accordion__panel-inner {
+    padding-top: var(--space-2);
+  }
+}

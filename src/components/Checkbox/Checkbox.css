@@ -167,3 +167,23 @@
 .art-checkbox--disabled .art-checkbox__text {
   color: var(--color-text-muted);
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-checkbox {
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+  }
+
+  .art-checkbox__face,
+  .art-checkbox__native {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .art-checkbox__face--triple {
+    width: 1.625rem;
+    min-width: 1.625rem;
+    height: 1.5rem;
+  }
+}

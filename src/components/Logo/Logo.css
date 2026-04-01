@@ -20,3 +20,9 @@
 .art-logo--xl {
   width: 360px;
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-logo--lg { width: 200px; }
+  .art-logo--xl { width: 260px; }
+}

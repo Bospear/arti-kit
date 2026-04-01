@@ -24,7 +24,7 @@ jobs:
           sshpass -p "$SERVER_PASSWORD" \
             scp -o StrictHostKeyChecking=no \
             artikit.tar.gz \
-            "${SERVER_USERNAME}@bospear.com:/tmp/artikit.tar.gz"
+            "${SERVER_USERNAME}@storybook.bospear.com:/tmp/artikit.tar.gz"
         env:
           SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
@@ -32,7 +32,7 @@ jobs:
       - name: Deploy on server
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: bospear.com
+          host: storybook.bospear.com
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
@@ -43,6 +43,6 @@ jobs:
             docker run -d \
               --name artikit \
               --restart unless-stopped \
-              -p 80:80 \
+              -p 6006:80 \
               artikit:latest
             docker image prune -f

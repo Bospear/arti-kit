@@ -69,3 +69,28 @@
   color: var(--color-text-muted);
   user-select: none;
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-pagination__controls {
+    gap: var(--space-1) var(--space-2);
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .art-pagination__summary {
+    width: 100%;
+    order: -1;
+    font-size: var(--text-xs);
+    min-width: 0;
+  }
+
+  .art-pagination__btn {
+    min-width: 2rem;
+  }
+
+  .art-pagination__page-btn {
+    min-width: 2rem;
+    padding-left: var(--space-1);
+    padding-right: var(--space-1);
+  }
+}

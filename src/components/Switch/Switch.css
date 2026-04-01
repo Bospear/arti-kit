@@ -73,3 +73,24 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .art-switch {
+    width: 3rem;
+    height: 1.75rem;
+  }
+
+  .art-switch__thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .art-switch--on .art-switch__thumb {
+    transform: translateY(-50%) translateX(1.25rem);
+  }
+
+  .art-switch__label {
+    font-size: var(--text-xs);
+  }
+}
