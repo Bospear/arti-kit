@@ -181,19 +181,32 @@
     drop-shadow(0 0 0 1.5px rgba(201, 162, 39, 0.55)) drop-shadow(0 0 3px rgba(201, 162, 39, 0.15));
 }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-banner--sm {
+  padding: var(--space-1) var(--space-4);
+  font-size: 0.65rem;
+}
+:root.art-bp-ready:not(.art-bp-up-sm) .art-banner--md {
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--text-xs);
+}
+:root.art-bp-ready:not(.art-bp-up-sm) .art-banner--lg {
+  padding: var(--space-2) var(--space-8);
+  font-size: var(--text-sm);
+  width: min(var(--banner-width-lg), 100%);
+}
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-banner--sm {
+  :root:not(.art-bp-ready) .art-banner--sm {
     padding: var(--space-1) var(--space-4);
     font-size: 0.65rem;
   }
-
-  .art-banner--md {
+  :root:not(.art-bp-ready) .art-banner--md {
     padding: var(--space-2) var(--space-6);
     font-size: var(--text-xs);
   }
-
-  .art-banner--lg {
+  :root:not(.art-bp-ready) .art-banner--lg {
     padding: var(--space-2) var(--space-8);
     font-size: var(--text-sm);
     width: min(var(--banner-width-lg), 100%);

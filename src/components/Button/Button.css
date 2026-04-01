@@ -125,14 +125,23 @@
   font-size: 1.15em;
 }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-btn--lg {
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+}
+:root.art-bp-ready:not(.art-bp-up-sm) .art-btn--md {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+}
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-btn--lg {
+  :root:not(.art-bp-ready) .art-btn--lg {
     padding: var(--space-2) var(--space-5);
     font-size: var(--text-sm);
   }
-
-  .art-btn--md {
+  :root:not(.art-bp-ready) .art-btn--md {
     padding: var(--space-2) var(--space-4);
     font-size: var(--text-xs);
   }

@@ -70,27 +70,16 @@
   user-select: none;
 }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-pagination__controls { gap: var(--space-1) var(--space-2); padding: var(--space-2) var(--space-3); }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-pagination__summary { width: 100%; order: -1; font-size: var(--text-xs); min-width: 0; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-pagination__btn { min-width: 2rem; }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-pagination__page-btn { min-width: 2rem; padding-left: var(--space-1); padding-right: var(--space-1); }
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-pagination__controls {
-    gap: var(--space-1) var(--space-2);
-    padding: var(--space-2) var(--space-3);
-  }
-
-  .art-pagination__summary {
-    width: 100%;
-    order: -1;
-    font-size: var(--text-xs);
-    min-width: 0;
-  }
-
-  .art-pagination__btn {
-    min-width: 2rem;
-  }
-
-  .art-pagination__page-btn {
-    min-width: 2rem;
-    padding-left: var(--space-1);
-    padding-right: var(--space-1);
-  }
+  :root:not(.art-bp-ready) .art-pagination__controls { gap: var(--space-1) var(--space-2); padding: var(--space-2) var(--space-3); }
+  :root:not(.art-bp-ready) .art-pagination__summary { width: 100%; order: -1; font-size: var(--text-xs); min-width: 0; }
+  :root:not(.art-bp-ready) .art-pagination__btn { min-width: 2rem; }
+  :root:not(.art-bp-ready) .art-pagination__page-btn { min-width: 2rem; padding-left: var(--space-1); padding-right: var(--space-1); }
 }

@@ -75,3 +75,10 @@ export type {
   AutocompleteProps,
   AutocompleteOption,
 } from './components/Autocomplete/Autocomplete';
+export { useMediaQuery } from './hooks/useMediaQuery';
+export { BreakpointProvider, useBreakpoint } from './hooks/BreakpointProvider';
+export type {
+  BreakpointMap,
+  BreakpointProviderProps,
+  BreakpointContextValue,
+} from './hooks/BreakpointProvider';

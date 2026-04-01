@@ -22,8 +22,12 @@
 .art-badge--solid-crimson { background-color: var(--color-crimson-300); color: var(--color-parchment-50); border-color: var(--color-crimson-500); }
 .art-badge--solid-azure { background-color: var(--color-azure-300); color: var(--color-parchment-50); border-color: var(--color-azure-500); }
 
-/* ── Mobile ── */
+/* ── Mobile (provider-driven) ── */
+:root.art-bp-ready:not(.art-bp-up-sm) .art-badge--lg { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); }
+:root.art-bp-ready:not(.art-bp-up-sm) .art-badge--md { padding: 2px var(--space-2); font-size: 0.65rem; }
+
+/* ── Mobile (fallback — no provider) ── */
 @media (max-width: 600px) {
-  .art-badge--lg { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); }
-  .art-badge--md { padding: 2px var(--space-2); font-size: 0.65rem; }
+  :root:not(.art-bp-ready) .art-badge--lg { padding: var(--space-1) var(--space-3); font-size: var(--text-xs); }
+  :root:not(.art-bp-ready) .art-badge--md { padding: 2px var(--space-2); font-size: 0.65rem; }
 }
