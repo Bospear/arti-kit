@@ -38,11 +38,39 @@ jobs:
           script: |
             docker load -i /tmp/artikit.tar.gz
             rm /tmp/artikit.tar.gz
+
             docker stop artikit 2>/dev/null || true
             docker rm artikit 2>/dev/null || true
             docker run -d \
               --name artikit \
               --restart unless-stopped \
-              -p 6006:80 \
+              -p 127.0.0.1:6006:80 \
               artikit:latest
+
+            docker network create caddy-net 2>/dev/null || true
+            docker network connect caddy-net artikit 2>/dev/null || true
+
+            mkdir -p /opt/caddy
+            cat > /opt/caddy/Caddyfile << 'CADDYEOF'
+            storybook.bospear.com {
+              reverse_proxy artikit:80
+            }
+            CADDYEOF
+            sed -i 's/^            //' /opt/caddy/Caddyfile
+
+            if docker ps -a --format '{{.Names}}' | grep -q '^caddy$'; then
+              docker restart caddy
+            else
+              docker run -d \
+                --name caddy \
+                --restart unless-stopped \
+                --network caddy-net \
+                -p 80:80 \
+                -p 443:443 \
+                -v /opt/caddy/Caddyfile:/etc/caddy/Caddyfile:ro \
+                -v caddy_data:/data \
+                -v caddy_config:/config \
+                caddy:2-alpine
+            fi
+
             docker image prune -f
