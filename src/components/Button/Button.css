@@ -119,6 +119,17 @@
   background-color: var(--color-crimson-300);
 }
 
+.art-btn--submit {
+  background: linear-gradient(168deg, var(--color-azure-300) 0%, var(--color-azure-400) 100%);
+  color: var(--color-parchment-50);
+  border-color: var(--color-azure-500);
+  box-shadow: var(--shadow-emboss);
+}
+
+.art-btn--submit:hover:not(:disabled) {
+  background: linear-gradient(168deg, var(--color-azure-400) 0%, var(--color-azure-500) 100%);
+}
+
 .art-btn__icon {
   display: inline-flex;
   align-items: center;
