@@ -7,7 +7,8 @@ export type ButtonVariant =
   | 'accent'
   | 'ghost'
   | 'outline'
-  | 'danger';
+  | 'danger'
+  | 'submit';
 
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
@@ -25,7 +26,7 @@ export function Button({
   disabled = false,
   icon,
   onClick,
-  type = 'button',
+  type = variant === 'submit' ? 'submit' : 'button',
   className = '',
   ...props
 }: ButtonProps) {
