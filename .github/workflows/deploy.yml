@@ -31,12 +31,18 @@ jobs:
 
       - name: Deploy on server
         uses: appleboy/ssh-action@v1.2.0
+        env:
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
           host: storybook.bospear.com
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          envs: SERVER_PASSWORD
+          request_pty: true
           script: |
-            # Deploy user needs passwordless sudo (or use root as SERVER_USERNAME)
+            # Cache sudo credentials (non-interactive; needs SERVER_PASSWORD)
+            echo "$SERVER_PASSWORD" | sudo -S -v
+
             sudo docker load -i /tmp/artikit.tar.gz
             rm -f /tmp/artikit.tar.gz
 
