@@ -36,32 +36,33 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            docker load -i /tmp/artikit.tar.gz
-            rm /tmp/artikit.tar.gz
+            # Deploy user needs passwordless sudo (or use root as SERVER_USERNAME)
+            sudo docker load -i /tmp/artikit.tar.gz
+            rm -f /tmp/artikit.tar.gz
 
-            docker stop artikit 2>/dev/null || true
-            docker rm artikit 2>/dev/null || true
-            docker run -d \
+            sudo docker stop artikit 2>/dev/null || true
+            sudo docker rm artikit 2>/dev/null || true
+            sudo docker run -d \
               --name artikit \
               --restart unless-stopped \
               -p 127.0.0.1:6006:80 \
               artikit:latest
 
-            docker network create caddy-net 2>/dev/null || true
-            docker network connect caddy-net artikit 2>/dev/null || true
+            sudo docker network create caddy-net 2>/dev/null || true
+            sudo docker network connect caddy-net artikit 2>/dev/null || true
 
-            mkdir -p /opt/caddy
-            cat > /opt/caddy/Caddyfile << 'CADDYEOF'
+            sudo mkdir -p /opt/caddy
+            sudo tee /opt/caddy/Caddyfile > /dev/null << 'CADDYEOF'
             storybook.bospear.com {
               reverse_proxy artikit:80
             }
             CADDYEOF
-            sed -i 's/^            //' /opt/caddy/Caddyfile
+            sudo sed -i 's/^            //' /opt/caddy/Caddyfile
 
-            if docker ps -a --format '{{.Names}}' | grep -q '^caddy$'; then
-              docker restart caddy
+            if sudo docker ps -a --format '{{.Names}}' | grep -q '^caddy$'; then
+              sudo docker restart caddy
             else
-              docker run -d \
+              sudo docker run -d \
                 --name caddy \
                 --restart unless-stopped \
                 --network caddy-net \
@@ -73,4 +74,4 @@ jobs:
                 caddy:2-alpine
             fi
 
-            docker image prune -f
+            sudo docker image prune -f
