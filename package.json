@@ -17,18 +17,24 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/artikit.js"
+      "import": "./dist/artikit.js",
+      "default": "./dist/artikit.js"
     },
     "./styles.css": "./dist/artikit.css",
     "./logo.png": "./dist/logo.png"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "scripts",
+    "vite.config.ts",
+    "tsconfig.build.json"
   ],
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "vite build && node scripts/copy-logo.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
