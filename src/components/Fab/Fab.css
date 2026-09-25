@@ -25,14 +25,14 @@
   width: 3.5rem;
   height: 3.5rem;
   padding: 0;
-  border: 3px solid var(--color-crimson-500);
+  border: 3px solid var(--color-primary-pressed);
   border-radius: var(--radius-full);
   background: linear-gradient(
     165deg,
-    var(--color-crimson-300) 0%,
-    var(--color-crimson-400) 100%
+    var(--color-primary) 0%,
+    var(--color-primary-hover) 100%
   );
-  color: var(--color-parchment-50);
+  color: var(--color-parchment-100);
   cursor: pointer;
   box-shadow: var(--shadow-md);
   transition:
@@ -121,7 +121,7 @@
   border: var(--border-medium);
   border-radius: var(--radius-full);
   background: var(--color-surface-raised);
-  color: var(--color-bark-300);
+  color: var(--color-text-secondary);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition:
@@ -132,9 +132,9 @@
 }
 
 .art-fab__action:hover {
-  background: var(--color-parchment-50);
-  color: var(--color-crimson-400);
-  border-color: var(--color-crimson-300);
+  background: var(--color-surface);
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary);
   transform: scale(1.06);
 }
 

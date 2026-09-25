@@ -20,9 +20,9 @@ function Sandbox({ children }: { children: ReactNode }) {
       style={{
         position: 'relative',
         minHeight: '14rem',
-        border: '2px dashed var(--color-parchment-400)',
+        border: '1px dashed var(--color-border)',
         borderRadius: '8px',
-        background: 'var(--color-parchment-50)',
+        background: 'var(--color-surface)',
       }}
     >
       {children}

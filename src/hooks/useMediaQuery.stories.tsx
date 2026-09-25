@@ -12,9 +12,9 @@ function Indicator({ label, active }: { label: string; active: boolean }) {
         gap: '0.5rem',
         padding: '0.5rem 1rem',
         borderRadius: '4px',
-        border: `2px solid ${active ? 'var(--color-crimson-300)' : 'var(--color-border)'}`,
-        background: active ? 'var(--color-crimson-50)' : 'var(--color-surface-raised)',
-        color: active ? 'var(--color-crimson-400)' : 'var(--color-text-muted)',
+        border: `1px solid ${active ? 'var(--color-primary)' : 'var(--color-border)'}`,
+        background: active ? 'var(--color-primary-light)' : 'var(--color-surface-raised)',
+        color: active ? 'var(--color-primary)' : 'var(--color-text-muted)',
         fontFamily: 'var(--font-display)',
         fontSize: 'var(--text-sm)',
         fontWeight: 600,
@@ -28,7 +28,7 @@ function Indicator({ label, active }: { label: string; active: boolean }) {
           width: 10,
           height: 10,
           borderRadius: '50%',
-          background: active ? 'var(--color-crimson-300)' : 'var(--color-steel-200)',
+          background: active ? 'var(--color-primary)' : 'var(--color-steel-600)',
           transition: 'background 150ms ease',
         }}
       />
@@ -87,7 +87,7 @@ function BreakpointDashboard() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <div>
         <h4 style={{ margin: '0 0 0.75rem' }}>
-          Current breakpoint: <span style={{ color: 'var(--color-crimson-300)' }}>{current}</span>
+          Current breakpoint: <span style={{ color: 'var(--color-primary)' }}>{current}</span>
         </h4>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
           {sorted.map(([name, value]) => (

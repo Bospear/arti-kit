@@ -100,63 +100,63 @@
 .art-tooltip--message .art-tooltip__inner {
   background: var(--color-surface-raised);
   color: var(--color-text-primary);
-  border-color: var(--color-bark-200);
+  border-color: var(--color-border);
 }
 
 .art-tooltip--message.art-tooltip--placement-top .art-tooltip__inner::after {
-  border-top-color: var(--color-bark-200);
+  border-top-color: var(--color-border);
 }
 
 .art-tooltip--message.art-tooltip--placement-bottom .art-tooltip__inner::after {
-  border-bottom-color: var(--color-bark-200);
+  border-bottom-color: var(--color-border);
 }
 
 /* ── Variant: error ── */
 .art-tooltip--error .art-tooltip__inner {
-  background: var(--color-crimson-50);
-  color: var(--color-crimson-500);
-  border-color: var(--color-crimson-300);
+  background: var(--color-danger-bg);
+  color: var(--color-ruby-200);
+  border-color: var(--color-danger);
   font-weight: var(--weight-semibold);
 }
 
 .art-tooltip--error.art-tooltip--placement-top .art-tooltip__inner::after {
-  border-top-color: var(--color-crimson-300);
+  border-top-color: var(--color-danger);
 }
 
 .art-tooltip--error.art-tooltip--placement-bottom .art-tooltip__inner::after {
-  border-bottom-color: var(--color-crimson-300);
+  border-bottom-color: var(--color-danger);
 }
 
 /* ── Variant: success ── */
 .art-tooltip--success .art-tooltip__inner {
-  background: var(--color-azure-50);
-  color: var(--color-azure-500);
-  border-color: var(--color-azure-300);
+  background: var(--color-success-bg);
+  color: var(--color-emerald-200);
+  border-color: var(--color-success);
   font-weight: var(--weight-semibold);
 }
 
 .art-tooltip--success.art-tooltip--placement-top .art-tooltip__inner::after {
-  border-top-color: var(--color-azure-300);
+  border-top-color: var(--color-success);
 }
 
 .art-tooltip--success.art-tooltip--placement-bottom .art-tooltip__inner::after {
-  border-bottom-color: var(--color-azure-300);
+  border-bottom-color: var(--color-success);
 }
 
 /* ── Variant: warning ── */
 .art-tooltip--warning .art-tooltip__inner {
-  background: var(--color-bark-50);
-  color: var(--color-bark-500);
-  border-color: var(--color-bark-200);
+  background: var(--color-warning-bg);
+  color: var(--color-gold-200);
+  border-color: var(--color-warning);
   font-weight: var(--weight-semibold);
 }
 
 .art-tooltip--warning.art-tooltip--placement-top .art-tooltip__inner::after {
-  border-top-color: var(--color-bark-200);
+  border-top-color: var(--color-warning);
 }
 
 .art-tooltip--warning.art-tooltip--placement-bottom .art-tooltip__inner::after {
-  border-bottom-color: var(--color-bark-200);
+  border-bottom-color: var(--color-warning);
 }
 
 /* ── Mobile (provider-driven) ── */

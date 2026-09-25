@@ -62,16 +62,16 @@
 }
 
 .art-form-item__label {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-text-secondary);
 }
 
 .art-form-item__required {
-  color: var(--color-crimson-300);
+  color: var(--color-primary);
   margin-left: var(--space-1);
 }
 
@@ -82,15 +82,15 @@
 .art-form-item__error {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  color: var(--color-crimson-200);
-  font-style: italic;
+  color: var(--color-danger);
+  font-style: normal;
 }
 
 .art-form-item__help {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  font-style: italic;
+  font-style: normal;
 }
 
 /* ── Disabled ── */

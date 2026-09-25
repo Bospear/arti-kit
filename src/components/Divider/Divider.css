@@ -5,7 +5,7 @@
   justify-content: center;
   width: 100%;
   margin: var(--space-6) 0;
-  color: var(--divider-ink, var(--color-bark-400));
+  color: var(--divider-ink, var(--color-leather-400));
 }
 
 .art-divider__flourish {
@@ -25,18 +25,17 @@
 }
 
 .art-divider__label {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
   color: var(--color-text-muted);
   white-space: nowrap;
   padding: 0 var(--space-4);
-  text-shadow: 0 1px 0 rgba(255, 250, 240, 0.35);
 }
 
-.art-divider--default { --divider-ink: var(--color-bark-400); }
-.art-divider--crimson { --divider-ink: var(--color-crimson-500); }
-.art-divider--azure   { --divider-ink: var(--color-azure-500); }
-.art-divider--ornate  { --divider-ink: var(--color-bark-300); }
+.art-divider--default { --divider-ink: var(--color-stone-500); }
+.art-divider--crimson { --divider-ink: var(--color-ruby-400); }
+.art-divider--azure   { --divider-ink: var(--color-sapphire-400); }
+.art-divider--ornate  { --divider-ink: var(--color-gold-400); }

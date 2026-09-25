@@ -13,8 +13,11 @@ const preview: Preview = {
   parameters: {
     layout: 'padded',
     backgrounds: {
-      default: 'parchment',
-      values: [{ name: 'parchment', value: '#ece4d4' }],
+      default: 'stone',
+      values: [
+        { name: 'stone', value: '#1f1710' },
+        { name: 'surface', value: '#2c241b' },
+      ],
     },
     controls: {
       matchers: {

@@ -1,78 +1,222 @@
 :root {
   /* ═══════════════════════════════════════════
-     ARTIFICER TOOLS — Design Tokens
-     Medieval / Fantasy / Craftsman aesthetic
+     ARTIFICER TOOLS — Design Tokens (Dark)
+     Source: Figma Artificer-tools Enterprise DS
      ═══════════════════════════════════════════ */
 
-  /* ── Core Palette ── */
-  --color-parchment-50: #f5f0e8;
-  --color-parchment-100: #ece4d4;
-  --color-parchment-200: #ddd2b8;
-  --color-parchment-300: #c9b998;
-  --color-parchment-400: #b5a488;
-  --color-parchment-500: #a89279;
+  /* ── Primitive: Iron (neutral grayscale) ── */
+  --color-iron-50: #f7f7f7;
+  --color-iron-100: #ebebeb;
+  --color-iron-200: #d4d4d4;
+  --color-iron-300: #b0b0b0;
+  --color-iron-400: #8a8a8a;
+  --color-iron-500: #6b6b6b;
+  --color-iron-600: #525252;
+  --color-iron-700: #3d3d3d;
+  --color-iron-800: #2a2a2a;
+  --color-iron-900: #1a1a1a;
+  --color-iron-950: #0f0f0f;
 
-  --color-crimson-50: #fbe8e8;
-  --color-crimson-100: #f0bfbf;
-  --color-crimson-200: #d94f4f;
-  --color-crimson-300: #c0392b;
-  --color-crimson-400: #a0261e;
-  --color-crimson-500: #7b1a12;
+  /* ── Primitive: Steel (cool blue-gray) ── */
+  --color-steel-50: #f0f2f5;
+  --color-steel-100: #dce1e8;
+  --color-steel-200: #b8c2d0;
+  --color-steel-300: #8a99ae;
+  --color-steel-400: #6b7c94;
+  --color-steel-500: #526178;
+  --color-steel-600: #414d60;
+  --color-steel-700: #343e4d;
+  --color-steel-800: #272f3b;
+  --color-steel-900: #1a2028;
+  --color-steel-950: #11151b;
 
-  --color-steel-50: #f0f1f2;
-  --color-steel-100: #d5d8dc;
-  --color-steel-200: #b0b6be;
-  --color-steel-300: #8a929c;
-  --color-steel-400: #6b7280;
-  --color-steel-500: #4a5058;
+  /* ── Primitive: Stone (warm taupe) ── */
+  --color-stone-50: #f5f2ee;
+  --color-stone-100: #e8e2d9;
+  --color-stone-200: #d1c5b5;
+  --color-stone-300: #b1a796;
+  --color-stone-400: #867e72;
+  --color-stone-500: #6b655c;
+  --color-stone-600: #554f48;
+  --color-stone-700: #433e38;
+  --color-stone-800: #342f2a;
+  --color-stone-900: #2c241b;
+  --color-stone-950: #1f1710;
 
-  --color-azure-50: #e6f2fa;
-  --color-azure-100: #b3d7f0;
-  --color-azure-200: #5ba0d0;
-  --color-azure-300: #3485b8;
-  --color-azure-400: #1f6a9c;
-  --color-azure-500: #0f4f7a;
+  /* ── Primitive: Parchment ── */
+  --color-parchment-50: #faf6ee;
+  --color-parchment-100: #f5efe5;
+  --color-parchment-200: #e8dfd0;
+  --color-parchment-300: #d4c6ae;
+  --color-parchment-400: #b8a68a;
+  --color-parchment-500: #9a8870;
+  --color-parchment-600: #7a6b58;
+  --color-parchment-700: #5c5143;
+  --color-parchment-800: #433a31;
+  --color-parchment-900: #2e2822;
+  --color-parchment-950: #1c1814;
 
-  --color-bark-50: #f2ebe4;
-  --color-bark-100: #d4bfa8;
-  --color-bark-200: #a67c52;
-  --color-bark-300: #7a5630;
-  --color-bark-400: #5c3d1e;
-  --color-bark-500: #3a2510;
+  /* ── Primitive: Leather Brown ── */
+  --color-leather-50: #f6efe6;
+  --color-leather-100: #e8d5c0;
+  --color-leather-200: #d4b08a;
+  --color-leather-300: #b8885c;
+  --color-leather-400: #9a6a42;
+  --color-leather-500: #7a5230;
+  --color-leather-600: #5c3d24;
+  --color-leather-700: #452e1b;
+  --color-leather-800: #332215;
+  --color-leather-900: #24180f;
+  --color-leather-950: #160e08;
 
-  --color-ink-900: #1a1a1a;
-  --color-ink-800: #2c2c2c;
-  --color-ink-700: #3d3d3d;
+  /* ── Primitive: Bronze ── */
+  --color-bronze-50: #faf3e8;
+  --color-bronze-100: #f0dfc4;
+  --color-bronze-200: #e0bf88;
+  --color-bronze-300: #c99a52;
+  --color-bronze-400: #b07d38;
+  --color-bronze-500: #8f6428;
+  --color-bronze-600: #704e1f;
+  --color-bronze-700: #563c18;
+  --color-bronze-800: #3f2c12;
+  --color-bronze-900: #2c1f0d;
+  --color-bronze-950: #1a1208;
 
-  --color-white: #faf8f4;
+  /* ── Primitive: Gold (brand interactive) ── */
+  --color-gold-50: #fbf6e4;
+  --color-gold-100: #f5e9c0;
+  --color-gold-200: #ebd480;
+  --color-gold-300: #d4b03a;
+  --color-gold-400: #c49f2a;
+  --color-gold-500: #a88620;
+  --color-gold-600: #8a6e1a;
+  --color-gold-700: #6b5514;
+  --color-gold-800: #4d3d0e;
+  --color-gold-900: #332908;
+  --color-gold-950: #1f1805;
 
-  /* ── Semantic Colors ── */
-  --color-bg: var(--color-parchment-100);
-  --color-surface: var(--color-parchment-50);
-  --color-surface-raised: var(--color-white);
-  --color-text-primary: var(--color-ink-900);
-  --color-text-secondary: var(--color-bark-300);
-  --color-text-muted: var(--color-steel-400);
-  --color-text-inverse: var(--color-parchment-50);
+  /* ── Primitive: Emerald ── */
+  --color-emerald-50: #e8f7ef;
+  --color-emerald-100: #c5ebd6;
+  --color-emerald-200: #8fd6ae;
+  --color-emerald-300: #52b882;
+  --color-emerald-400: #2f9a64;
+  --color-emerald-500: #247a4e;
+  --color-emerald-600: #1c603e;
+  --color-emerald-700: #164a30;
+  --color-emerald-800: #113624;
+  --color-emerald-900: #0c2519;
+  --color-emerald-950: #07160f;
 
-  --color-primary: var(--color-crimson-300);
-  --color-primary-hover: var(--color-crimson-400);
-  --color-primary-light: var(--color-crimson-50);
+  /* ── Primitive: Sapphire ── */
+  --color-sapphire-50: #e8f3fa;
+  --color-sapphire-100: #c4e0f2;
+  --color-sapphire-200: #7fc0e4;
+  --color-sapphire-300: #3d9acc;
+  --color-sapphire-400: #1f7fb0;
+  --color-sapphire-500: #186490;
+  --color-sapphire-600: #134f72;
+  --color-sapphire-700: #0f3d58;
+  --color-sapphire-800: #0b2d42;
+  --color-sapphire-900: #081e2d;
+  --color-sapphire-950: #05121b;
 
-  --color-secondary: var(--color-azure-300);
-  --color-secondary-hover: var(--color-azure-400);
-  --color-secondary-light: var(--color-azure-50);
+  /* ── Primitive: Ruby ── */
+  --color-ruby-50: #fbeaea;
+  --color-ruby-100: #f3c8c8;
+  --color-ruby-200: #e58a8a;
+  --color-ruby-300: #d14f4f;
+  --color-ruby-400: #b83333;
+  --color-ruby-500: #942828;
+  --color-ruby-600: #751f1f;
+  --color-ruby-700: #5a1818;
+  --color-ruby-800: #421212;
+  --color-ruby-900: #2d0c0c;
+  --color-ruby-950: #1a0707;
 
-  --color-accent: var(--color-bark-200);
-  --color-accent-hover: var(--color-bark-300);
+  /* ── Primitive: Arcane Violet ── */
+  --color-arcane-50: #f3eef8;
+  --color-arcane-100: #e0d2ef;
+  --color-arcane-200: #c0a5df;
+  --color-arcane-300: #9a74c8;
+  --color-arcane-400: #7a52b0;
+  --color-arcane-500: #623f92;
+  --color-arcane-600: #4e3274;
+  --color-arcane-700: #3c2759;
+  --color-arcane-800: #2c1d42;
+  --color-arcane-900: #1e1430;
+  --color-arcane-950: #120c1c;
 
-  --color-border: var(--color-parchment-300);
-  --color-border-strong: var(--color-bark-200);
-  --color-outline: var(--color-ink-900);
+  /* ── Legacy aliases (API / class-name stability) ── */
+  --color-crimson-50: var(--color-ruby-50);
+  --color-crimson-100: var(--color-ruby-100);
+  --color-crimson-200: var(--color-ruby-300);
+  --color-crimson-300: var(--color-ruby-400);
+  --color-crimson-400: var(--color-ruby-500);
+  --color-crimson-500: var(--color-ruby-700);
+
+  --color-azure-50: var(--color-sapphire-50);
+  --color-azure-100: var(--color-sapphire-100);
+  --color-azure-200: var(--color-sapphire-300);
+  --color-azure-300: var(--color-sapphire-400);
+  --color-azure-400: var(--color-sapphire-500);
+  --color-azure-500: var(--color-sapphire-700);
+
+  --color-bark-50: var(--color-leather-50);
+  --color-bark-100: var(--color-leather-100);
+  --color-bark-200: var(--color-leather-300);
+  --color-bark-300: var(--color-leather-400);
+  --color-bark-400: var(--color-leather-600);
+  --color-bark-500: var(--color-leather-800);
+
+  --color-ink-900: var(--color-iron-900);
+  --color-ink-800: var(--color-iron-800);
+  --color-ink-700: var(--color-iron-700);
+
+  --color-white: var(--color-parchment-100);
+
+  /* ── Semantic (Dark Theme) ── */
+  --color-bg: var(--color-stone-950);
+  --color-surface: var(--color-stone-900);
+  --color-surface-raised: var(--color-stone-800);
+  --color-surface-overlay: rgba(31, 23, 16, 0.72);
+
+  --color-text-primary: var(--color-parchment-100);
+  --color-text-secondary: var(--color-stone-300);
+  --color-text-muted: var(--color-stone-400);
+  --color-text-inverse: var(--color-stone-950);
+  --color-text: var(--color-text-primary);
+
+  --color-primary: var(--color-gold-400);
+  --color-primary-hover: var(--color-gold-300);
+  --color-primary-pressed: var(--color-gold-500);
+  --color-primary-light: rgba(196, 159, 42, 0.16);
+
+  --color-secondary: var(--color-steel-400);
+  --color-secondary-hover: var(--color-steel-300);
+  --color-secondary-light: rgba(107, 124, 148, 0.16);
+
+  --color-accent: var(--color-sapphire-300);
+  --color-accent-hover: var(--color-sapphire-200);
+
+  --color-success: var(--color-emerald-400);
+  --color-success-bg: rgba(47, 154, 100, 0.14);
+  --color-warning: var(--color-gold-300);
+  --color-warning-bg: rgba(212, 176, 58, 0.14);
+  --color-danger: var(--color-ruby-400);
+  --color-danger-bg: rgba(184, 51, 51, 0.14);
+  --color-info: var(--color-sapphire-300);
+  --color-info-bg: rgba(61, 154, 204, 0.14);
+
+  --color-border: var(--color-stone-700);
+  --color-border-strong: var(--color-stone-600);
+  --color-border-focus: var(--color-gold-400);
+  --color-border-selection: var(--color-gold-300);
+  --color-outline: var(--color-gold-400);
 
   /* ── Typography ── */
-  --font-display: 'Cinzel', 'Palatino Linotype', 'Georgia', serif;
-  --font-body: 'Crimson Text', 'Palatino', 'Book Antiqua', serif;
+  --font-display: 'Ortica', 'Ortica Linear', 'Palatino Linotype', Georgia, serif;
+  --font-body: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono: 'Fira Code', 'Courier New', monospace;
 
   --text-xs: 0.75rem;
@@ -83,6 +227,8 @@
   --text-2xl: 1.5rem;
   --text-3xl: 2rem;
   --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+  --text-6xl: 4rem;
 
   --leading-tight: 1.2;
   --leading-normal: 1.5;
@@ -92,6 +238,7 @@
   --tracking-normal: 0;
   --tracking-wide: 0.05em;
   --tracking-wider: 0.1em;
+  --tracking-overline: 0.12em;
 
   --weight-normal: 400;
   --weight-medium: 500;
@@ -112,22 +259,24 @@
 
   /* ── Border & Radius ── */
   --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 20px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
 
   --border-thin: 1px solid var(--color-border);
-  --border-medium: 2px solid var(--color-border-strong);
-  --border-heavy: 3px solid var(--color-outline);
+  --border-medium: 1px solid var(--color-border-strong);
+  --border-heavy: 2px solid var(--color-outline);
+  --border-focus: 2px solid var(--color-border-focus);
 
-  /* ── Shadows ── */
-  --shadow-sm: 0 1px 3px rgba(26, 26, 26, 0.12);
-  --shadow-md: 0 4px 12px rgba(26, 26, 26, 0.15);
-  --shadow-lg: 0 8px 24px rgba(26, 26, 26, 0.18);
-  --shadow-inner: inset 0 2px 6px rgba(26, 26, 26, 0.1);
-  --shadow-emboss: inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                   0 2px 4px rgba(26, 26, 26, 0.2);
+  /* ── Shadows (dark surfaces) ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-inner: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-emboss: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+                   0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-focus: 0 0 0 3px var(--color-primary-light);
 
   /* ── Transitions ── */
   --transition-fast: 150ms ease;
@@ -135,7 +284,6 @@
   --transition-slow: 400ms ease;
 
   /* ── Component sizing ── */
-  /* Large quest-title ribbon (Banner size="lg"); 37.5rem ≈ 600px at 16px root */
   --banner-width-lg: 37.5rem;
 
   /* ── Z-index stack ── */

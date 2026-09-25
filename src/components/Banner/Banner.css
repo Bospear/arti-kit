@@ -10,7 +10,6 @@
   letter-spacing: var(--tracking-wider);
   text-align: center;
   isolation: isolate;
-  /* Royal ribbon / swallowtail: one V-notch per side (two points per fly), as in the mark */
   clip-path: polygon(
     10% 0%,
     90% 0%,
@@ -99,8 +98,8 @@
 
 /* Variants: base fill + woven highlight + shape-following rim (brass / silver / leather) */
 .art-banner--crimson {
-  background-color: var(--color-crimson-300);
-  color: var(--color-parchment-50);
+  background-color: var(--color-ruby-400);
+  color: var(--color-parchment-100);
   text-shadow:
     0 1px 0 rgba(0, 0, 0, 0.45),
     0 2px 4px rgba(0, 0, 0, 0.35),
@@ -120,8 +119,8 @@
 }
 
 .art-banner--azure {
-  background-color: var(--color-azure-300);
-  color: var(--color-parchment-50);
+  background-color: var(--color-sapphire-400);
+  color: var(--color-parchment-100);
   text-shadow:
     0 1px 0 rgba(0, 0, 0, 0.4),
     0 2px 4px rgba(0, 0, 0, 0.3),
@@ -141,8 +140,8 @@
 }
 
 .art-banner--parchment {
-  background-color: var(--color-parchment-200);
-  color: var(--color-ink-900);
+  background-color: var(--color-gold-400);
+  color: var(--color-stone-950);
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.55),
     0 -1px 0 rgba(92, 61, 30, 0.08);
@@ -161,7 +160,7 @@
 }
 
 .art-banner--dark {
-  background-color: var(--color-ink-800);
+  background-color: var(--color-stone-800);
   color: var(--color-parchment-100);
   text-shadow:
     0 1px 0 rgba(0, 0, 0, 0.5),

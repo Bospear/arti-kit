@@ -2,6 +2,7 @@
  * Artikit — Artificer design system components for React 19.
  * Import styles: `import 'artikit/styles.css'` (includes design tokens).
  */
+import './styles/fonts.css';
 import './styles/tokens.css';
 
 export { Button } from './components/Button/Button';

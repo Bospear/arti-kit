@@ -53,12 +53,12 @@
 }
 
 .art-autocomplete__menu::-webkit-scrollbar-thumb {
-  background: var(--color-parchment-300);
+  background: var(--color-stone-600);
   border-radius: var(--radius-full);
 }
 
 .art-autocomplete__menu::-webkit-scrollbar-thumb:hover {
-  background: var(--color-bark-200);
+  background: var(--color-stone-500);
 }
 
 /* ── Options ── */
@@ -77,7 +77,7 @@
 }
 
 .art-autocomplete__option:hover {
-  background-color: var(--color-parchment-100);
+  background-color: var(--color-stone-700);
 }
 
 .art-autocomplete__option--active {
