@@ -1,0 +1,19 @@
+.art-alert-dialog.art-dialog {
+  border-top: 3px solid var(--color-info);
+}
+
+.art-alert-dialog--success {
+  border-top-color: var(--color-success);
+}
+
+.art-alert-dialog--warning {
+  border-top-color: var(--color-warning);
+}
+
+.art-alert-dialog--danger {
+  border-top-color: var(--color-danger);
+}
+
+.art-alert-dialog--info {
+  border-top-color: var(--color-info);
+}

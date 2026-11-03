@@ -1,0 +1,47 @@
+.art-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  vertical-align: middle;
+}
+
+.art-spinner__ring {
+  display: block;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-full);
+  animation: art-spinner-spin 0.7s linear infinite;
+}
+
+.art-spinner--sm .art-spinner__ring {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+}
+
+.art-spinner--md .art-spinner__ring {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 2.5px;
+}
+
+.art-spinner--lg .art-spinner__ring {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-width: 3px;
+}
+
+@keyframes art-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-spinner__ring {
+    animation-duration: 1.6s;
+  }
+}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, type ComponentType, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { AlertVariant } from '../Alert/Alert';
+import { useToastRegion } from './ToastRegion';
 import './Snackbar.css';
 
 function IconInfo({ className = '' }: { className?: string }) {
@@ -92,6 +93,7 @@ export function Snackbar({
   container,
 }: SnackbarProps) {
   const timerRef = useRef<number | null>(null);
+  const toastRegion = useToastRegion();
   const Icon = ICONS[variant] ?? IconInfo;
   const role = variant === 'error' || variant === 'warning' ? 'alert' : 'status';
   const live: 'assertive' | 'polite' =
@@ -109,7 +111,14 @@ export function Snackbar({
 
   if (!open) return null;
 
-  const mount = container ?? (typeof document !== 'undefined' ? document.body : null);
+  const inRegion = container == null && toastRegion.inRegion;
+  const mount = container
+    ? container
+    : inRegion
+      ? toastRegion.mount
+      : typeof document !== 'undefined'
+        ? document.body
+        : null;
   if (mount == null) return null;
 
   const hostClass = [
@@ -122,26 +131,38 @@ export function Snackbar({
 
   const panelClass = ['art-snackbar', `art-snackbar--${variant}`, className].filter(Boolean).join(' ');
 
-  const content = (
+  const panel = (
+    <div className={panelClass} role={role} aria-live={live} aria-atomic="true">
+      <span className="art-snackbar__icon-wrap" aria-hidden="true">
+        <Icon className="art-snackbar__icon" />
+      </span>
+      <div className="art-snackbar__content">{children}</div>
+      {actionLabel != null && actionLabel !== '' && typeof onAction === 'function' && (
+        <button type="button" className="art-snackbar__action" onClick={onAction}>
+          {actionLabel}
+        </button>
+      )}
+      {showDismiss && (
+        <button type="button" className="art-snackbar__dismiss" onClick={onClose} aria-label="Dismiss">
+          ×
+        </button>
+      )}
+    </div>
+  );
+
+  const content = inRegion ? (
+    panel
+  ) : (
     <div className={hostClass} role="presentation">
-      <div className={panelClass} role={role} aria-live={live} aria-atomic="true">
-        <span className="art-snackbar__icon-wrap" aria-hidden="true">
-          <Icon className="art-snackbar__icon" />
-        </span>
-        <div className="art-snackbar__content">{children}</div>
-        {actionLabel != null && actionLabel !== '' && typeof onAction === 'function' && (
-          <button type="button" className="art-snackbar__action" onClick={onAction}>
-            {actionLabel}
-          </button>
-        )}
-        {showDismiss && (
-          <button type="button" className="art-snackbar__dismiss" onClick={onClose} aria-label="Dismiss">
-            ×
-          </button>
-        )}
-      </div>
+      {panel}
     </div>
   );
 
   return createPortal(content, mount);
 }
+
+/** Figma Toast — alias of Snackbar for design-system naming parity. */
+export const Toast = Snackbar;
+export type ToastProps = SnackbarProps;
+export type ToastVariant = SnackbarVariant;
+export type ToastPosition = SnackbarPosition;

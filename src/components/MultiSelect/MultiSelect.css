@@ -1,0 +1,102 @@
+.art-multiselect {
+  position: relative;
+}
+
+.art-multiselect--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.art-multiselect__control {
+  min-height: 2.5rem;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: text;
+}
+
+.art-input-group--error .art-multiselect__control {
+  border-color: var(--color-danger);
+}
+
+.art-multiselect__control:focus-within {
+  border-color: var(--color-border-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+.art-multiselect__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.art-multiselect__input {
+  flex: 1;
+  min-width: 6rem;
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  padding: var(--space-1);
+  outline: none;
+}
+
+.art-multiselect__list {
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  right: 0;
+  top: calc(100% + var(--space-1));
+  margin: 0;
+  padding: var(--space-1);
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  max-height: 14rem;
+  overflow: auto;
+}
+
+.art-multiselect__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.art-multiselect__option:hover,
+.art-multiselect__option:focus-visible {
+  background: var(--color-surface-raised);
+  outline: none;
+}
+
+.art-multiselect__option--selected {
+  background: var(--color-primary-light);
+}
+
+.art-multiselect__empty {
+  padding: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.art-input-group__helper {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.art-input-group__success {
+  font-size: var(--text-sm);
+  color: var(--color-success);
+}

@@ -52,6 +52,58 @@
   color: var(--color-danger);
 }
 
+.art-input-group__helper {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.art-input-group__success {
+  font-size: var(--text-sm);
+  color: var(--color-success);
+}
+
+.art-input-group--success .art-input {
+  border-color: var(--color-success);
+}
+
+.art-password-input__field {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.art-password-input__field .art-input {
+  width: 100%;
+  padding-right: 4.5rem;
+}
+
+.art-password-input__toggle {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.art-password-input__toggle:hover {
+  color: var(--color-text-primary);
+  background: var(--color-surface-raised);
+}
+
+.art-password-input__toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
 .art-textarea {
   resize: vertical;
   min-height: 100px;

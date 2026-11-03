@@ -1,0 +1,45 @@
+.art-skeleton {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-sunken) 0%,
+    var(--color-bg-muted) 45%,
+    var(--color-surface-sunken) 90%
+  );
+  background-size: 200% 100%;
+  animation: art-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.art-skeleton--text {
+  width: 100%;
+  height: 0.875rem;
+  border-radius: var(--radius-sm);
+}
+
+.art-skeleton--circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+}
+
+.art-skeleton--rect {
+  width: 100%;
+  height: 6rem;
+  border-radius: var(--radius-md);
+}
+
+@keyframes art-skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-skeleton {
+    animation: none;
+    background: var(--color-surface-sunken);
+  }
+}

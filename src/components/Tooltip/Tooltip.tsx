@@ -13,7 +13,7 @@ import {
 import './Tooltip.css';
 
 export type TooltipVariant = 'message' | 'error' | 'success' | 'warning';
-export type TooltipPlacement = 'top' | 'bottom';
+export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
 
 export type TooltipProps = {
   /** Tooltip body (plain text or rich node). */

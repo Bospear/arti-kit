@@ -53,6 +53,27 @@
   transform: translateX(-50%) translateY(0);
 }
 
+.art-tooltip--placement-left {
+  right: calc(100% + 10px);
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%) translateX(0.35rem);
+}
+
+.art-tooltip--placement-left.art-tooltip--visible {
+  transform: translateY(-50%) translateX(0);
+}
+
+.art-tooltip--placement-right {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-0.35rem);
+}
+
+.art-tooltip--placement-right.art-tooltip--visible {
+  transform: translateY(-50%) translateX(0);
+}
+
 .art-tooltip--visible {
   opacity: 1;
 }
@@ -96,19 +117,27 @@
   border-top: none;
 }
 
-/* ── Variant: message (neutral) ── */
+/* ── Variant: message (neutral) — Figma container/tooltip ── */
 .art-tooltip--message .art-tooltip__inner {
-  background: var(--color-surface-raised);
-  color: var(--color-text-primary);
-  border-color: var(--color-border);
+  background: var(--color-container-tooltip);
+  color: var(--color-text-on-tooltip);
+  border-color: var(--color-container-tooltip);
 }
 
 .art-tooltip--message.art-tooltip--placement-top .art-tooltip__inner::after {
-  border-top-color: var(--color-border);
+  border-top-color: var(--color-container-tooltip);
 }
 
 .art-tooltip--message.art-tooltip--placement-bottom .art-tooltip__inner::after {
-  border-bottom-color: var(--color-border);
+  border-bottom-color: var(--color-container-tooltip);
+}
+
+.art-tooltip--message.art-tooltip--placement-left .art-tooltip__inner::after {
+  border-left-color: var(--color-container-tooltip);
+}
+
+.art-tooltip--message.art-tooltip--placement-right .art-tooltip__inner::after {
+  border-right-color: var(--color-container-tooltip);
 }
 
 /* ── Variant: error ── */
