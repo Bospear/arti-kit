@@ -58,12 +58,43 @@ jobs:
             sudo docker network connect caddy-net artikit 2>/dev/null || true
 
             sudo mkdir -p /opt/caddy
-            sudo tee /opt/caddy/Caddyfile > /dev/null << 'CADDYEOF'
-            storybook.bospear.com {
-              reverse_proxy artikit:80
-            }
-            CADDYEOF
-            sudo sed -i 's/^            //' /opt/caddy/Caddyfile
+            if [ ! -f /opt/caddy/Caddyfile ]; then
+              echo | sudo tee /opt/caddy/Caddyfile >/dev/null
+            fi
+
+            # Replace only this site's block so other vhosts stay in the Caddyfile.
+            tmp=$(mktemp)
+            sudo awk -v host="storybook.bospear.com" '
+              function delta(s,    i, n, ch) {
+                n = 0
+                for (i = 1; i <= length(s); i++) {
+                  ch = substr(s, i, 1)
+                  if (ch == "{") n++
+                  else if (ch == "}") n--
+                }
+                return n
+              }
+              BEGIN { skip = 0; depth = 0 }
+              {
+                trimmed = $0
+                gsub(/^[[:space:]]+|[[:space:]]+$/, "", trimmed)
+                if (!skip && trimmed == host " {") {
+                  skip = 1
+                  depth = delta($0)
+                  next
+                }
+                if (skip) {
+                  depth += delta($0)
+                  if (depth <= 0) skip = 0
+                  next
+                }
+                print
+              }
+            ' /opt/caddy/Caddyfile > "$tmp"
+            printf '\n%s {\n\treverse_proxy artikit:80\n}\n' \
+              "storybook.bospear.com" >> "$tmp"
+            sudo tee /opt/caddy/Caddyfile >/dev/null < "$tmp"
+            rm -f "$tmp"
 
             if sudo docker ps -a --format '{{.Names}}' | grep -q '^caddy$'; then
               sudo docker restart caddy
